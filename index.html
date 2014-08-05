@@ -4,11 +4,25 @@
   <title>Moodle GuestView</title>
 </head>
 <body>
-<form id="sso_login" action="http://sso.thsh.tp.edu.tw/node?destination=node/1" method="post" target="sso_login_target">
+<form name="sso_login_form" action="http://sso.thsh.tp.edu.tw/node?destination=node/1" method="post" target="sso_login_target">
 <input type="text" name="name" value="moodle_guest" />
 <input type="password" name="pass" value="moodle_guest" />
 <input type="hidden" name="form_id" value="user_login_block" />
 <iframe src="http://sso.thsh.tp.edu.tw/" name="sso_login_target"></iframe>
 </form>
+<script type="text/javascript">
+  function isInteger(value) {
+    return (!isNaN(value) && Math.floor(value) === value);
+  }
+  function jumpToCourse(cid){
+    console.log(cid);
+    document.location.href = 'http://moodle.thsh.tp.edu.tw/course/view.php?id=' + cid;
+  }
+  document.sso_login_form.submit();
+  var u = document.location.href;
+  u = u.split("?");
+  console.log(u[1]);
+  setTimeout("jumpToCourse(" + Math.floor(u[1]) + ")", 500);
+</script>
 </body>
 </html>
