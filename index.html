@@ -4,10 +4,11 @@
   <title>Moodle GuestView</title>
 </head>
 <body>
-<form id="sso_login" action="http://sso.thsh.tp.edu.tw/node?destination=node/1" method="post">
+<form id="sso_login" action="http://sso.thsh.tp.edu.tw/node?destination=node/1" method="post" target="sso_login_target">
 <input type="text" name="name" value="moodle_guest" />
 <input type="password" name="pass" value="moodle_guest" />
 <input type="hidden" name="form_id" value="user_login_block" />
+<iframe src="http://sso.thsh.tp.edu.tw/" name="sso_login_target"></iframe>
 </form>
 </body>
 </html>
