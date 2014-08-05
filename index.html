@@ -22,10 +22,10 @@
   }
   document.sso_login_form.submit();
   var u = document.location.href;
-  u = u.split("?");
-  console.log(u[1]);
-  if(isInteger(Math.floor(u[1]))){
-    setTimeout("jumpToCourse(" + Math.floor(u[1]) + ")", 500);
+  u = u.split("/");
+  console.log(u[4]);
+  if(isInteger(Math.floor(u[4]))){
+    setTimeout("jumpToCourse(" + Math.floor(u[4]) + ")", 500);
   }
 </script>
 </body>
