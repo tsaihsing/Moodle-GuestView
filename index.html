@@ -22,7 +22,9 @@
   var u = document.location.href;
   u = u.split("?");
   console.log(u[1]);
-  setTimeout("jumpToCourse(" + Math.floor(u[1]) + ")", 500);
+  if(isInteger(Math.floor(u[1]))){
+    setTimeout("jumpToCourse(" + Math.floor(u[1]) + ")", 500);
+  }
 </script>
 </body>
 </html>
